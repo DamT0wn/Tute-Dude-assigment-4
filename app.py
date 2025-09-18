@@ -19,7 +19,7 @@ collection = db['Flask']
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/home')
 def name():
     Todays_date = datetime.now().strftime("%d %m %y")
     return render_template('index.html', Todays_date=Todays_date)
