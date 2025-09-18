@@ -1,110 +1,22 @@
-# Tute-Dude-assigment-3
+# Tute-Dude-assigment-4
 
-📌 Flask + MongoDB Atlas + API Project
+This repository was used as a hands-on exercise to practice a variety of Git and GitHub commands in a structured, multi-developer-like environment. The commit history reflects a planned development process, showcasing the following:
 
-This project demonstrates a Flask application with the following features:
+Repository Setup: The project began with the creation of a new GitHub repository and was cloned to a local machine using SSH, a standard practice for secure and authenticated access. An SSH key was generated and added to the GitHub account to enable this.
 
-A /api route that returns JSON data stored in a local file (data.json).
+Branching Strategy: A feature-branching workflow was used to isolate development.
 
-A frontend form that inserts user data into MongoDB Atlas.
+An initial branch was created for the user (your_username) to add the project's foundational code.
 
-On successful submission, the user is redirected to a success page.
-If there’s an error, it is displayed on the same form page without redirection.
+A second branch (your_name_new) was used to simulate a change that would cause a merge conflict, providing an opportunity to practice conflict resolution.
 
-🚀 Features
+Two separate feature branches (master_1 and master_2) were created to represent parallel development of the frontend and backend, respectively. This is a common approach in team projects to allow simultaneous work without stepping on each other's toes.
 
-Flask Backend with routes:
+Committing and Merging: Commits were made with clear, descriptive messages to maintain a readable and understandable project history. Changes from the feature branches were merged into the main branch to integrate new features.
 
-/api → Returns JSON from data.json.
+Advanced Git Commands: More complex scenarios were handled using powerful Git commands:
 
-/ → Displays a form for submitting data.
+git reset --soft was used on the main branch to undo specific commits while keeping the changes staged. This allowed for re-committing a desired state and demonstrated how to surgically modify commit history.
 
-/success → Displays confirmation message.
+git rebase was performed to cleanly integrate the updated main branch changes back into the master_1 branch. The rebase was executed without squashing commits, preserving the individual commit history for each field addition and maintaining a linear, clean project log.
 
-MongoDB Atlas Integration for storing form data.
-
-Error Handling → Shows errors on form page without reloading.
-
-Templating with Jinja2 (Flask render_template).
-
-📂 Project Structure
-flask_app/
-│── app.py              # Main Flask app
-│── data.json           # Sample data file for API
-│── templates/
-│     └── form.html     # HTML form for frontend
-│── README.md           # Project documentation
-
-⚙️ Installation & Setup
-1️⃣ Clone the Repository
-git clone <your-repo-url>
-cd flask_app
-
-2️⃣ Create Virtual Environment
-python -m venv venv
-
-
-Activate it:
-
-Windows:
-
-venv\Scripts\activate
-
-
-Linux/Mac:
-
-source venv/bin/activate
-
-3️⃣ Install Dependencies
-pip install flask pymongo
-
-🛠 MongoDB Atlas Setup
-
-Go to MongoDB Atlas
-.
-
-Create a free cluster.
-
-Create a database named mydatabase and collection mycollection.
-
-Whitelist your IP or allow access from anywhere.
-
-Get the connection string and update in app.py:
-
-client = MongoClient("mongodb+srv://<username>:<password>@<cluster-url>/test")
-
-▶️ Running the Application
-
-Run Flask server:
-
-python app.py
-
-
-You’ll see:
-
- * Running on http://127.0.0.1:5000/
-
-🌐 Usage
-
-Visit http://127.0.0.1:5000/api → Returns JSON data from data.json.
-
-Visit http://127.0.0.1:5000/ → Displays the form.
-
-Submit the form:
-
-✅ Success → Redirects to /success page → "Data submitted successfully!"
-
-❌ Error → Displays error message on form page.
-
-🧪 Example JSON Response
-
-GET /api
-
-[
-  {"id": 1, "name": "Alice", "email": "alice@example.com"},
-  {"id": 2, "name": "Bob", "email": "bob@example.com"}
-]
-
-📜 License
-
-This project is open-source and free to use for learning purposes.
